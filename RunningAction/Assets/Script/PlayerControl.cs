@@ -15,6 +15,8 @@ public class PlayerControl : MonoBehaviour
 
     Vector3 Look;
 
+    DeathCount death;
+
     public STEP step = STEP.None;
     public STEP next_step = STEP.None;
     public float step_timer = 0.0f;
@@ -23,6 +25,8 @@ public class PlayerControl : MonoBehaviour
     public float speed = 2.0f;
     public float deceleration = 0.5f;
 
+    public float height = -5.0f;
+
     bool isLanded;
     bool isColided;
     bool isKey;
@@ -30,6 +34,8 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        death = GameObject.Find("DeathCount").GetComponent<DeathCount>();
+
         this.next_step = STEP.Run;
 
         isLanded = false;
@@ -41,13 +47,27 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         Move();
-    }
+	}
 
     void Move()
     {
         Vector3 velocity = this.GetComponent<Rigidbody>().velocity;
 
         Check_Landed();
+
+        switch (this.step)
+        {
+            case STEP.Run:
+            case STEP.Jump:
+                if (this.transform.position.y < height)
+                {
+                    this.next_step = STEP.miss;
+                }
+
+                break;
+            default:
+                break;
+        }
 
         this.step_timer += Time.deltaTime;
 
@@ -179,4 +199,38 @@ public class PlayerControl : MonoBehaviour
 
 		} while (false);
     }
+
+    public bool IsPlayEnd()
+	{
+        bool ret = false;
+
+		switch (this.step)
+		{
+			case STEP.miss:
+                death.count++;
+                ret = true;
+				break;
+			default:
+				break;
+		}
+
+        return (ret);
+	}
+
+	private void OnTriggerEnter(Collider collision)
+	{
+		if (collision.tag == "Obstacle")
+		{
+            switch (this.step)
+            {
+                case STEP.Run:
+                case STEP.Jump:
+                    this.next_step = STEP.miss;
+
+                    break;
+                default:
+                    break;
+            }
+        }
+	}
 }

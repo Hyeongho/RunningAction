@@ -72,12 +72,14 @@
     <Compile Include="Assets\AurynSky\Forest Pack\Scripts\WheelController.cs" />
     <Compile Include="Assets\Script\DeathCount.cs" />
     <Compile Include="Assets\Script\Foothold.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\GameRoot.cs" />
     <Compile Include="Assets\Script\LapTime.cs" />
     <Compile Include="Assets\Script\MoveFloor.cs" />
     <Compile Include="Assets\Script\ObjectFade.cs" />
     <Compile Include="Assets\Script\Pendulum.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
+    <Compile Include="Assets\Script\SawMove.cs" />
     <Compile Include="Assets\Script\UI_Script.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -160,6 +162,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>E:/RunningAction/RunningAction/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>E:/RunningAction/RunningAction/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>E:/RunningAction/RunningAction/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>

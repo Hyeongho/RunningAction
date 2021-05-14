@@ -12,7 +12,7 @@ public class ObjectFade : MonoBehaviour
 
     new Renderer renderer;
 
-    GameObject floor;
+    public GameObject floor;
 
     Color c;
 
@@ -22,8 +22,6 @@ public class ObjectFade : MonoBehaviour
         alpha = 1.0f;
 
         renderer = this.gameObject.transform.GetChild(0).GetComponent<Renderer>();
-
-        floor = this.gameObject.transform.GetChild(0).gameObject;
 
         FadeOut();
     }
@@ -45,15 +43,15 @@ public class ObjectFade : MonoBehaviour
 
     void FadeOutComplete()
 	{
+        floor.SetActive(false);
+
         c = renderer.material.color;
 
         c.a = 0;
 
         renderer.material.color = c;
 
-        floor.SetActive(false);
-
-        FadeIn();
+        Invoke("FadeIn", delay);
     }
 
     void FadeInComplete()
@@ -76,6 +74,6 @@ public class ObjectFade : MonoBehaviour
 	{
         floor.SetActive(true);
 
-        iTween.ValueTo(gameObject, iTween.Hash("from", 0.0f, "to", 1.0f, "time", speed, "delay", delay, "easetype", iTween.EaseType.linear, "onUpdate", "FadeOutUpdate", "oncomplete", "FadeInComplete"));
+        iTween.ValueTo(gameObject, iTween.Hash("from", 0.0f, "to", 1.0f, "time", speed, "easetype", iTween.EaseType.linear, "onUpdate", "FadeOutUpdate", "oncomplete", "FadeInComplete"));
     }
 }

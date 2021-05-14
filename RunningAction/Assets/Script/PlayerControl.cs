@@ -15,8 +15,6 @@ public class PlayerControl : MonoBehaviour
 
     Vector3 Look;
 
-    DeathCount death;
-
     public STEP step = STEP.None;
     public STEP next_step = STEP.None;
     public float step_timer = 0.0f;
@@ -27,27 +25,28 @@ public class PlayerControl : MonoBehaviour
 
     public float height = -5.0f;
 
+    public bool isEnd;
+
     bool isLanded;
     bool isColided;
     bool isKey;
 
     // Start is called before the first frame update
     void Start()
-    {
-        death = GameObject.Find("DeathCount").GetComponent<DeathCount>();
-
+    {    
         this.next_step = STEP.Run;
 
         isLanded = false;
         isColided = false;
         isKey = false;
+        isEnd = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-	}
+    }
 
     void Move()
     {
@@ -204,18 +203,18 @@ public class PlayerControl : MonoBehaviour
 	{
         bool ret = false;
 
-		switch (this.step)
+        switch (this.step)
 		{
 			case STEP.miss:
-                death.count++;
                 ret = true;
-				break;
+
+                break;
 			default:
 				break;
 		}
 
         return (ret);
-	}
+    }
 
 	private void OnTriggerEnter(Collider collision)
 	{

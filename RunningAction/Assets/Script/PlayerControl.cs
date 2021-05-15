@@ -27,6 +27,8 @@ public class PlayerControl : MonoBehaviour
 
     public bool isEnd;
 
+    public bool isFinsh;
+
     bool isLanded;
     bool isColided;
     bool isKey;
@@ -40,6 +42,8 @@ public class PlayerControl : MonoBehaviour
         isColided = false;
         isKey = false;
         isEnd = false;
+
+        isFinsh = false;
     }
 
     // Update is called once per frame
@@ -232,4 +236,12 @@ public class PlayerControl : MonoBehaviour
             }
         }
 	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.CompareTag("End"))
+		{
+            isFinsh = true;
+        }        
+    }
 }

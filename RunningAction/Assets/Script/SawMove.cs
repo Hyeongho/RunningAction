@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SawMove : MonoBehaviour
 {
+    public string dic;
+
+    public float size;
+
     public float speed;
 
     // Start is called before the first frame update
@@ -15,6 +19,6 @@ public class SawMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        iTween.MoveTo(gameObject, iTween.Hash("z", -3.0f, "speed", speed, "easeType", iTween.EaseType.easeInOutSine, "looptype", iTween.LoopType.pingPong));
+        iTween.MoveTo(gameObject, iTween.Hash(dic, size, "speed", speed, "easeType", iTween.EaseType.easeInOutSine, "looptype", iTween.LoopType.pingPong));
     }
 }

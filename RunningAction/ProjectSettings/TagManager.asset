@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Tutorial
+  - End
+  - Record
   layers:
   - Default
   - TransparentFX

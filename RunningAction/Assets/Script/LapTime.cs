@@ -6,9 +6,11 @@ using TMPro;
 
 public class LapTime : MonoBehaviour
 {
-    float second;
-    int minute;
-    int hour;
+    public float second;
+    public int minute;
+    public int hour;
+
+    PlayerControl player;
 
     TextMeshProUGUI TMPtext;
 
@@ -20,12 +22,16 @@ public class LapTime : MonoBehaviour
         hour = 0;
 
         TMPtext = this.gameObject.GetComponent<TextMeshProUGUI>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Timer();
+		if (!player.isFinsh)
+		{
+            Timer();
+        }      
     }
 
     void Timer()

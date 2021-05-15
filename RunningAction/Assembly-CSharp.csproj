@@ -71,6 +71,8 @@
     <Compile Include="Assets\AurynSky\Forest Pack\Scripts\Rotator.cs" />
     <Compile Include="Assets\AurynSky\Forest Pack\Scripts\WheelController.cs" />
     <Compile Include="Assets\Script\DeathCount.cs" />
+    <Compile Include="Assets\Script\EndCount.cs" />
+    <Compile Include="Assets\Script\EndTime.cs" />
     <Compile Include="Assets\Script\Foothold.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\GameRoot.cs" />

@@ -65,4 +65,9 @@ public class UI_Script : MonoBehaviour
 
 		SceneManager.LoadScene("Temporary");
 	}
+
+	public void OnEnd()
+	{
+		Application.Quit();
+	}
 }

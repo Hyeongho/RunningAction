@@ -13,6 +13,8 @@ ScriptsOnlyBuild:
     - Pendulum
     - PlayerControl
     - SawMove
+    - SpikeTrapDemo
+    - TrapDoorDemo
     - UI_Script
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -32,8 +34,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -68,13 +72,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -84,6 +98,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11182}
     - Class: 114
       Script: {instanceID: 11428}
+    - Class: 114
+      Script: {instanceID: 11736}
     - Class: 114
       Script: {instanceID: 11752}
     - Class: 114
@@ -119,6 +135,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13002}
     - Class: 114
+      Script: {instanceID: 13220}
+    - Class: 114
       Script: {instanceID: 13324}
     - Class: 114
       Script: {instanceID: 13368}
@@ -135,6 +153,8 @@ ScriptsOnlyBuild:
     - Class: 135
       Script: {instanceID: 0}
     - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -440,7 +460,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: c37b1a2676ee93f48d4ca17f8273c4f1
+      Hash: 942f519d6d133091c426f6b33a32fe3b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TrapDoorDemo
@@ -788,7 +808,7 @@ ScriptsOnlyBuild:
     className: InputField
   - hash:
       serializedVersion: 2
-      Hash: bc1708b24cad11ba6bac6eb614def309
+      Hash: 68880ca7e14005aa3c52c596200c3c6c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -1124,7 +1144,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 5d722fe6b927f263e8bcfeac7df846c9
+      Hash: 07ba9db1d0e444a54e90b1312a4f85f8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerControl
@@ -1270,4 +1290,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/Temporary.unity
-  playerPath: "E:/RunningAction/\uBE4C\uB4DC\uD30C\uC77C/RunningAction.exe"
+  playerPath: "E:/RunningAction/\uBE4C\uB4DC2/RunningAction.exe"

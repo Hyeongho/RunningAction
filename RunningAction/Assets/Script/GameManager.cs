@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public Image FadeImage;
     public GameObject Tutorial;
 
+    public GameObject Tutorial2;
+
     public GameObject TMPro1;
     public GameObject TMPro2;
 
@@ -23,17 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        var obj = FindObjectsOfType<GameManager>();
-
-        if (obj.Length == 1)
-        {
-            DontDestroyOnLoad(this.gameObject);
-        }
-
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        
     }
 
     // Start is called before the first frame update
@@ -48,6 +40,7 @@ public class GameManager : MonoBehaviour
         FadeImage.gameObject.SetActive(false);
 
         Tutorial.SetActive(false);
+        Tutorial2.SetActive(false);
         TMPro2.SetActive(false);
     }
 
@@ -67,9 +60,18 @@ public class GameManager : MonoBehaviour
 			if (count == 1)
 			{
                 TMPro1.SetActive(false);
+
+                Tutorial2.SetActive(true);
+            }
+
+			if (count == 2)
+			{
                 TMPro2.SetActive(true);
 
                 button1.SetActive(false);
+
+                Tutorial2.SetActive(false);
+
                 button2.SetActive(true);
             }
 		}

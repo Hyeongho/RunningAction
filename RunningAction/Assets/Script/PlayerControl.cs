@@ -29,6 +29,11 @@ public class PlayerControl : MonoBehaviour
 
     public bool isFinsh;
 
+    public Transform transform1;
+    public Transform transform2;
+    public Transform transform3;
+    public Transform transform4;
+
     bool isLanded;
     bool isColided;
     bool isKey;
@@ -49,7 +54,32 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+		if (!IsPlayEnd())
+		{
+            Move();
+
+			if (Input.GetKey(KeyCode.F1))
+			{
+                this.gameObject.transform.position = transform1.position;
+
+            }
+
+            if (Input.GetKey(KeyCode.F2))
+            {
+                this.gameObject.transform.position = transform2.position;
+            }
+
+            if (Input.GetKey(KeyCode.F3))
+            {
+                this.gameObject.transform.position = transform3.position;
+            }
+
+            if (Input.GetKey(KeyCode.F4))
+            {
+                this.gameObject.transform.position = transform4.position;
+            }
+        }
+        
     }
 
     void Move()

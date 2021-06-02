@@ -7,6 +7,7 @@ public class TrapDoorDemo : MonoBehaviour {
     //This script goes on the TrapDoor prefab;
 
     public Animator TrapDoorAnim; //Animator for the trap door;
+    public float waitTime;
 
     // Use this for initialization
     void Awake()
@@ -23,11 +24,11 @@ public class TrapDoorDemo : MonoBehaviour {
         //play open animation;
         TrapDoorAnim.SetTrigger("open");
         //wait 2 seconds;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitTime);
         //play close animation;
         TrapDoorAnim.SetTrigger("close");
         //wait 2 seconds;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(waitTime);
         //Do it again;
         StartCoroutine(OpenCloseTrap());
 

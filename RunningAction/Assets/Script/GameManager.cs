@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject button1;
     public GameObject button2;
 
+    public List<GameObject> list = new List<GameObject>();
+
     bool isTutorial;
 
     int count;
@@ -42,6 +44,11 @@ public class GameManager : MonoBehaviour
         Tutorial.SetActive(false);
         Tutorial2.SetActive(false);
         TMPro2.SetActive(false);
+
+		for (int i = 0; i < list.Count; i++)
+		{
+            list[i].SetActive(false);
+		}
     }
 
     // Update is called once per frame
@@ -62,6 +69,11 @@ public class GameManager : MonoBehaviour
                 TMPro1.SetActive(false);
 
                 Tutorial2.SetActive(true);
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    list[i].SetActive(true);
+                }
             }
 
 			if (count == 2)
@@ -73,6 +85,11 @@ public class GameManager : MonoBehaviour
                 Tutorial2.SetActive(false);
 
                 button2.SetActive(true);
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    list[i].SetActive(false);
+                }
             }
 		}
 

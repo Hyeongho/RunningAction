@@ -29,15 +29,17 @@ public class UI_Script : MonoBehaviour
 		else
 		{
             Destroy(this.gameObject);
-		}    
-    }
+		}
 
-	void Start()
-	{
-		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
+		player = GameObject.Find("Player").GetComponent<PlayerControl>();
 
 		lapTime = GameObject.Find("Timer").GetComponent<LapTime>();
 		count = GameObject.Find("DeathCount").GetComponent<DeathCount>();
+	}
+
+	void Start()
+	{
+		
 	}
 
 	void Update()

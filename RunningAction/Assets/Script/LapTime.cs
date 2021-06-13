@@ -14,15 +14,18 @@ public class LapTime : MonoBehaviour
 
     TextMeshProUGUI TMPtext;
 
-    // Start is called before the first frame update
-    void Start()
+	private void Awake()
+	{
+        TMPtext = this.gameObject.GetComponent<TextMeshProUGUI>();
+        player = GameObject.Find("Player").GetComponent<PlayerControl>();
+    }
+
+	// Start is called before the first frame update
+	void Start()
     {
         second = 0;
         minute = 0;
-        hour = 0;
-
-        TMPtext = this.gameObject.GetComponent<TextMeshProUGUI>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
+        hour = 0;      
     }
 
     // Update is called once per frame

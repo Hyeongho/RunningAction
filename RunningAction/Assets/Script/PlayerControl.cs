@@ -38,10 +38,11 @@ public class PlayerControl : MonoBehaviour
     bool isColided;
     bool isKey;
 
-    // Start is called before the first frame update
-    void Start()
-    {    
-        this.next_step = STEP.Run;
+    Animator playerAni;
+
+	private void Awake()
+	{
+        playerAni = GameObject.Find("Player_Chr").GetComponent<Animator>();
 
         isLanded = false;
         isColided = false;
@@ -49,6 +50,12 @@ public class PlayerControl : MonoBehaviour
         isEnd = false;
 
         isFinsh = false;
+    }
+
+	// Start is called before the first frame update
+	void Start()
+    {    
+        this.next_step = STEP.Run;      
     }
 
     // Update is called once per frame
@@ -106,6 +113,8 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            playerAni.SetBool("isRun", true);
+
             Look = 0 * Vector3.forward + -1 * Vector3.right;
 
             transform.rotation = Quaternion.LookRotation(Look);
@@ -113,13 +122,25 @@ public class PlayerControl : MonoBehaviour
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
+		else if (Input.GetKeyUp(KeyCode.LeftArrow))
+		{
+            playerAni.SetBool("isRun", false);
+        }
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            playerAni.SetBool("isRun", true);
+
             Look = 0 * Vector3.forward + 1 * Vector3.right;
 
             transform.rotation = Quaternion.LookRotation(Look);
 
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+
+		else if (Input.GetKeyUp(KeyCode.RightArrow))
+		{
+            playerAni.SetBool("isRun", false);
         }
 
 		if (this.next_step == STEP.None)
@@ -137,6 +158,8 @@ public class PlayerControl : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.LeftAlt))
                         {
                             this.next_step = STEP.Jump;
+
+                            playerAni.SetBool("isJump", true);
                         }
                     }
 
@@ -145,7 +168,9 @@ public class PlayerControl : MonoBehaviour
 					if (this.isLanded)
 					{
                         this.next_step = STEP.Run;
-					}
+
+                        playerAni.SetBool("isJump", false);
+                    }
 					break;
 				default:
 					break;
@@ -254,6 +279,8 @@ public class PlayerControl : MonoBehaviour
 	{
 		if (collision.tag == "Obstacle")
 		{
+            Debug.Log("tag");
+
             switch (this.step)
             {
                 case STEP.Run:

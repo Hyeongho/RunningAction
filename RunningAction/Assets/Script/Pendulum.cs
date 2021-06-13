@@ -16,6 +16,6 @@ public class Pendulum : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        iTween.RotateTo(gameObject, iTween.Hash("x", size, "speed", speed, "easeType", iTween.EaseType.easeInOutSine, "looptype", iTween.LoopType.pingPong));
+        iTween.RotateTo(this.gameObject, iTween.Hash("z", size, "speed", speed, "easeType", iTween.EaseType.easeInOutSine, "looptype", iTween.LoopType.pingPong));
     }
 }

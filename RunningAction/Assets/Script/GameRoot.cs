@@ -27,7 +27,7 @@ public class GameRoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
+        this.player = GameObject.Find("Player").GetComponent<PlayerControl>();
 
         death = GameObject.Find("DeathCount").GetComponent<DeathCount>();
 

@@ -12505,6 +12505,7 @@ GameObject:
   - component: {fileID: 1350657454}
   - component: {fileID: 1350657455}
   - component: {fileID: 1350657456}
+  - component: {fileID: 1350657457}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -12583,6 +12584,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charObj: {fileID: 322904596}
   ragdollObj: {fileID: 2122880201}
+--- !u!65 &1350657457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350657452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5014336, z: 1}
+  m_Center: {x: 0, y: 0.2492832, z: 0}
 --- !u!4 &1350756056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4881404980133362, guid: a1644dd8880d0594d970514153034e86,
